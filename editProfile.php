@@ -195,14 +195,14 @@
                         update_status = Data;
                         if(update_status == 1){
                             var r = confirm("Update Profile Success");
-                            window.location.replace("http://localhost/manage/successLogin.php");
+                            window.location.replace("http://localhost/manage/home.php");
                         }else if(update_status == 2){
                             var r = confirm("Old Password Wrong");
-                            window.location.replace("http://localhost/manage/successLogin.php");
+                            window.location.replace("http://localhost/manage/home.php");
                         }
                         console.log("Data " +Data);
                         // var r = confirm("Update Profile Success");
-                        // window.location.replace("http://localhost/manage/successLogin.php");
+                        // window.location.replace("http://localhost/manage/home.php");
                     },
                     error: function(oData){
 

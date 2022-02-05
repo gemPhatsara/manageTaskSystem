@@ -57,10 +57,10 @@ session_start();
                     print_r($updateProfile->errorInfo());
                     die();
                 }
-                // Header("Location:successLogin.php?update_status=$Status");
+                // Header("Location:home.php?update_status=$Status");
             }else{
                 $Status = 2;
-                // Header("Location:successLogin.php?update_status=2");
+                // Header("Location:home.php?update_status=2");
             }
 
     }else{
@@ -77,7 +77,7 @@ session_start();
             print_r($updateProfile->errorInfo());
             die();
         }
-        // Header("Location:successLogin.php?update_status=$Status");
+        // Header("Location:home.php?update_status=$Status");
     }
     echo $Status;
 

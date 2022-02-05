@@ -48,7 +48,7 @@
         print_r($insertTask->errorInfo());
         die();
     }
-    Header("Location:successLogin.php?create_status=$Status");
+    Header("Location:home.php?create_status=$Status");
 
 
 

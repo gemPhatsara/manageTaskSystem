@@ -27,6 +27,6 @@
     }
 
     
-    Header("Location:successLogin.php?receive_status=$Status");
+    Header("Location:home.php?receive_status=$Status");
 
 ?>

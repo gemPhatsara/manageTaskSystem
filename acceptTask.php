@@ -3,7 +3,7 @@ include('connDB.php');
 session_start();
 $techID = $_SESSION['TechID'];
 $Status = $_GET['status'];
-$job_id = $_POST['job_id'];
+$job_id = $_POST['jobID'];
 $sqlGetDeny = "SELECT list_tech_deny FROM job WHERE job_id = $job_id";
 $GetDeny = $conn->query($sqlGetDeny); 
 $Deny = $GetDeny->fetch(PDO::FETCH_ASSOC);
@@ -31,5 +31,5 @@ if($AcceptTask){
     die();
 }
 echo $Status;
-// Header("Location:successLogin.php?accept_status=$Status");
+// Header("Location:home.php?accept_status=$Status");
 ?>

@@ -113,7 +113,7 @@
     $total_pages = ceil($total_rows['no'] / $no_of_records_per_page);
 
     if($type == ''){
-        $sql = "SELECT * FROM job ORDER BY created_at DESC,status ASC OFFSET $offset ROWS FETCH NEXT $no_of_records_per_page ROWS ONLY";
+        $sql = "SELECT * FROM job ORDER BY created_at DESC,status ASC";
 
     }elseif($type == 'tech'){
 
@@ -131,7 +131,6 @@
             $status = $result['status'];
 
             $sql = "SELECT list_tech_deny,tech_id FROM job WHERE job_id = $jobID ";
-            // echo $sql;
             $stm = $conn->query($sql);
             $result = $stm->fetch(PDO::FETCH_ASSOC);
             $strArrayDeny = $result['list_tech_deny'];
@@ -151,13 +150,11 @@
             }else{
                 $sql = "SELECT job_id FROM job WHERE job_id = $jobID AND (( $column = $UsertypeID ) $condition";
             }
-           
             
             // $sql = "SELECT jobID FROM job WHERE jobID = $jobID AND (( $column = $UsertypeID AND list_tech_deny IS NULL ) $condition";
 
             // $sql = "SELECT jobID FROM job WHERE jobID = $jobID AND (( ($column = $UsertypeID and status = 3 ) or ($column = $UsertypeID AND list_tech_deny IS NULL and status = 4)  ) $condition";
 
-            echo $sql;
             echo "<br>";
             $stm = $conn->query($sql);
             if($stm){
@@ -168,23 +165,20 @@
             }
         }
         $strArrayJobID = join(",",$aJobID);
-        
-        $sql = "SELECT * FROM job  WHERE 
+        $sql = "SELECT * FROM job WHERE 
                     job_id IN($strArrayJobID)
                     and status BETWEEN 2 AND 5 
-                    ORDER BY created_at DESC,status ASC OFFSET $offset ROWS FETCH NEXT $no_of_records_per_page ROWS ONLY";
+                    ORDER BY created_at DESC,status ASC";
 
     }elseif($type == 'customer'){
-        $sql = "SELECT * FROM job  WHERE $column = $UsertypeID  ORDER BY created_at DESC,status ASC OFFSET $offset ROWS FETCH NEXT $no_of_records_per_page ROWS ONLY";
+        $sql = "SELECT * FROM job WHERE $column = $UsertypeID  ORDER BY created_at DESC,status ASC";
     }
-    // echo $sql;
 
     $getJob = $conn->query($sql);
     $JobList = array();
     if($getJob){
         $JobList = $getJob->fetchAll(PDO::FETCH_ASSOC);  
     }
-    echo $sql;
 
     $Status = array(
         '1' => "New",
@@ -772,7 +766,7 @@ $(document).ready(function(){
                 success: function(oData)
                 {
                         
-                    location.replace("http://localhost/manage/successLogin.php?edit_task_status="+oData);
+                    location.replace("http://localhost/manage/home.php?edit_task_status="+oData);
                 },
                 error: function(oData){
 

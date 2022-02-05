@@ -29,7 +29,7 @@
     }
 
 
-    header("Location:successLogin.php?add_order_status=$Status");
+    header("Location:home.php?add_order_status=$Status");
 
 
 

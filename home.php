@@ -1,6 +1,7 @@
 <?php
     include('connDB.php');
     session_start();
+    
     $CreateStatus = null;
     $UpdateStatus = null;
     $EditTaskStatus = 2;
@@ -141,8 +142,8 @@
                 </li>
             <?php } ?>
         </ul>
-        <a href="Login.php">
-        <button class="btn" style="background-color: darkgray;font-size: 18px;font-weight: bolder;">Logout</button>
+        <a href="logout.php">
+            <button class="btn" style="background-color: darkgray;font-size: 18px;font-weight: bolder;">Logout</button>
         </a>
     </div>
     <div class="tab-content">
@@ -199,44 +200,44 @@ $(document).ready(function(){
     
     if(create_status == 1){
         var r = confirm("Create Task Success");
-        window.location.replace("http://localhost/manage/successLogin.php");
+        window.location.replace("http://localhost/manage/home.php");
     }
     
     if(edit_task_status == 1){
         var r = confirm("Edit Task Success");
-        window.location.replace("http://localhost/manage/successLogin.php");
+        window.location.replace("http://localhost/manage/home.php");
     }
     if(edit_task_status == 0){
         var r = confirm("Edit Task Not Success");
-        window.location.replace("http://localhost/manage/successLogin.php");
+        window.location.replace("http://localhost/manage/home.php");
     }
 
     if(receive_status >= 1){
         var r = confirm("Receive Product Success ("+receive_status+")");
-        window.location.replace("http://localhost/manage/successLogin.php");
+        window.location.replace("http://localhost/manage/home.php");
     }
 
     if(add_order_status >= 1){
         var r = confirm("Add Order Success ("+add_order_status+")");
-        window.location.replace("http://localhost/manage/successLogin.php");
+        window.location.replace("http://localhost/manage/home.php");
     }
 
     if(confirm_status >= 1){
         var r = confirm("Confirm Order Success ("+confirm_status+")");
-        window.location.replace("http://localhost/manage/successLogin.php");
+        window.location.replace("http://localhost/manage/home.php");
     }
 
     if(accept_status == 1){
         var r = confirm("Accept Task Success");
-        window.location.replace("http://localhost/manage/successLogin.php");
+        window.location.replace("http://localhost/manage/home.php");
     }else if(accept_status == 4){
         var r = confirm("Deny Task Success");
-        window.location.replace("http://localhost/manage/successLogin.php")
+        window.location.replace("http://localhost/manage/home.php")
     }
 
     if(take_product_status == 1){
         var r = confirm("Take Product Success");
-        window.location.replace("http://localhost/manage/successLogin.php");
+        window.location.replace("http://localhost/manage/home.php");
     }
     
     

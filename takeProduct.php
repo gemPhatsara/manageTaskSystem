@@ -23,6 +23,6 @@
         die();
     }
     echo $Status;
-    // Header("Location:successLogin.php?take_status=$Status");
+    // Header("Location:home.php?take_status=$Status");
 
 ?>

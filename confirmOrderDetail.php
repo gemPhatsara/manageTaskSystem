@@ -43,7 +43,7 @@
     $ConfirmOrder = $conn->query($sql);
 
     if($ConfirmOrder){
-        Header("Location:successLogin.php?confirm_status=$status");
+        Header("Location:home.php?confirm_status=$status");
     }else{
         echo "\nPDO::errorInfo():\n";
         print_r($ConfirmOrder->errorInfo());

@@ -31,11 +31,10 @@
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-				
-					<span class="login100-form-title p-b-32">
-						Register Form
-					</span>
-<form action="checkRegister.php" method="post" id="from_submit_register">
+				<span class="login100-form-title p-b-32">
+					Register Form
+				</span>
+				<form action="checkRegister.php" method="post" id="from_submit_register">
 					<span class="txt1 p-b-11">
 						Username
 					</span>
@@ -45,7 +44,7 @@
 					</div>
 					
 					<span class="txt1 p-b-11">
-                        Password
+						Password
 					</span>
 					<div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
 						<span class="btn-show-pass">
@@ -55,8 +54,8 @@
 						<span class="focus-input100"></span>
 					</div>
 
-                    <span class="txt1 p-b-11">
-                        Re-Password
+					<span class="txt1 p-b-11">
+						Re-Password
 					</span>
 					<div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
 						<span class="btn-show-pass">
@@ -66,7 +65,7 @@
 						<span class="focus-input100"></span>
 					</div>
 
-                    <span class="txt1 p-b-11">
+					<span class="txt1 p-b-11">
 						Name
 					</span>
 					<div class="wrap-input100 validate-input m-b-12" data-validate = "Username is required">
@@ -74,7 +73,7 @@
 						<span class="focus-input100"></span>
 					</div>
 
-                    <span class="txt1 p-b-11">
+					<span class="txt1 p-b-11">
 						Lastname
 					</span>
 					<div class="wrap-input100 validate-input m-b-12" data-validate = "Username is required">
@@ -82,7 +81,7 @@
 						<span class="focus-input100"></span>
 					</div>
 
-                    <span class="txt1 p-b-11">
+					<span class="txt1 p-b-11">
 						Email
 					</span>
 					<div class="wrap-input100 validate-input m-b-12" data-validate = "Username is required">
@@ -90,7 +89,7 @@
 						<span class="focus-input100"></span>
 					</div>
 
-                    <span class="txt1 p-b-11">
+					<span class="txt1 p-b-11">
 						Telephone
 					</span>
 					<div class="wrap-input100 validate-input m-b-12" data-validate = "Username is required">
@@ -106,7 +105,7 @@
 							</label>
 						</div>
 
-                        <div class="contact100-form-checkbox">
+						<div class="contact100-form-checkbox">
 							<input class="input-checkbox100" id="ckb2" type="radio" name="usertype" value="technician">
 							<label class="label-checkbox100" for="ckb2">
 								Looking for customer
@@ -114,14 +113,20 @@
 						</div>
 					</div>
 
-                    <div class="" style="margin-left: 7em">
-                        <button type="submit" id="submitRegister" class="login100-form-btn">
-                            Register
-                        </button>
-                    </div>
+					<div class="row">
+						<div class="col-md-5">
+							<button type="button" class="login100-form-btn-red pull-left" onclick="history.back()">Cancel</button>
+						</div>
+						<div class="col-md-2"></div>
+						<div class="col-md-5">
+							<button type="submit" id="submitRegister" class="login100-form-btn pull-right">
+								Register
+							</button>
+						</div>
+						
+					</div>
 
-                    </form>
-				
+				</form>
 			</div>
 		</div>
 	</div>
@@ -199,14 +204,14 @@
                         register_status = Data;
                         if(register_status == 0){
                             var r = confirm("Register Not Success");
-                            window.location.replace("http://localhost/manage/Login.php");
+                            window.location.replace("http://localhost/manage/login.php");
                         }else{
                             var r = confirm(register_status);
-                            window.location.replace("http://localhost/manage/Login.php");
+                            window.location.replace("http://localhost/manage/login.php");
                         }
                         console.log("Data " +Data);
                         // var r = confirm("Update Profile Success");
-                        // window.location.replace("http://localhost/manage/successLogin.php");
+                        // window.location.replace("http://localhost/manage/home.php");
                     },
                     error: function(oData){
 
