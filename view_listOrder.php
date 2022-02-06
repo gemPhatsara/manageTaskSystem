@@ -67,7 +67,7 @@
     $total_rows = $getCountProducts->fetch(PDO::FETCH_ASSOC);
     $total_pages = ceil($total_rows['no'] / $no_of_records_per_page);
 
-    $sql = "SELECT * FROM orders WHERE confirm_status IS NULL or confirm_status = 0 ORDER BY order_id ASC OFFSET $offset ROWS FETCH NEXT $no_of_records_per_page ROWS ONLY";
+    $sql = "SELECT * FROM orders WHERE confirm_status IS NULL or confirm_status = 0 ORDER BY order_id ASC";
     $getOrderList = $conn->query($sql);
     $OrderList = $getOrderList->fetchAll(PDO::FETCH_ASSOC);
 

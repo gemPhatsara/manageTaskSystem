@@ -16,7 +16,7 @@
     elseif(isset($_SESSION['ID'])){
         $UsertypeID = $_SESSION['ID'];
         $table = 'administrator';
-        $column = 'ID';
+        $column = 'id';
         $type = '';
     }
     date_default_timezone_set('Asia/Bangkok');

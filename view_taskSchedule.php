@@ -68,6 +68,10 @@
     $disable = '';
     $action = "editTask.php";
     $Required = "";
+    $type = '';
+    if($_SESSION["auth"] != 1){
+        Header("Location:Login.php"); //user & password incorrect back to login again
+    }
     if(isset($_SESSION['CustomerID'])){
 
         $UsertypeID = $_SESSION['CustomerID'];
@@ -87,7 +91,7 @@
     elseif(isset($_SESSION['ID'])){
         $UsertypeID = $_SESSION['ID'];
         $table = 'administrator';
-        $column = 'ID';
+        $column = 'id';
         $type = '';
         $Required = "required";
     }

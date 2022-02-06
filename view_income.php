@@ -71,7 +71,7 @@
     elseif(isset($_SESSION['ID'])){
         $UsertypeID = $_SESSION['ID'];
         $table = 'administrator';
-        $column = 'ID';
+        $column = 'id';
         $type = '';
     }
     if(isset($_SESSION['pageno'])){
@@ -89,7 +89,7 @@
     $total_rows = $getCountJob->fetch(PDO::FETCH_ASSOC);
     $total_pages = ceil($total_rows['no'] / $no_of_records_per_page);
 
-    $sql = "SELECT * FROM job WHERE status = 5 ORDER BY created_at DESC,status ASC OFFSET $offset ROWS FETCH NEXT $no_of_records_per_page ROWS ONLY";
+    $sql = "SELECT * FROM job WHERE status = 5 ORDER BY created_at DESC,status ASC";
 
     $getJob = $conn->query($sql);
     $JobList = $getJob->fetchAll(PDO::FETCH_ASSOC);  

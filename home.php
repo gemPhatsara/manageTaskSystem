@@ -1,7 +1,9 @@
 <?php
     include('connDB.php');
     session_start();
-    
+    if($_SESSION["auth"] != 1){
+        Header("Location:Login.php"); //user & password incorrect back to login again
+    }
     $CreateStatus = null;
     $UpdateStatus = null;
     $EditTaskStatus = 2;
@@ -11,7 +13,7 @@
     $AcceptStatus = 0;
     $TakeProductStatus = 0;
     $_SESSION['pageno'] = 1;
-    
+    $type = '';
     if(isset($_GET['pageno'])){
         $_SESSION['pageno'] =  $_GET['pageno'];
     }
@@ -66,7 +68,7 @@
     elseif(isset($_SESSION['ID'])){
         $UsertypeID = $_SESSION['ID'];
         $table = 'administrator';
-        $column = 'ID';
+        $column = 'id';
         $type = '';
     }
 

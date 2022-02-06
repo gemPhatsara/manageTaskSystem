@@ -31,12 +31,14 @@
     elseif(isset($_SESSION['ID'])){
         $UsertypeID = $_SESSION['ID'];
         $table = 'administrator';
-        $column = 'ID';
+        $column = 'id';
         $type = '';
     }
-    
-    $getProfile = $conn->query("SELECT U.username,F.* FROM users U INNER JOIN $table F ON U.$column = F.$column 
-                                WHERE F.$column = $UsertypeID ");
+    $sql = "SELECT U.username,F.* 
+            FROM users U 
+            INNER JOIN $table F ON U.$column = F.$column 
+            WHERE F.$column = $UsertypeID ";
+    $getProfile = $conn->query($sql);
     $Profile = $getProfile->fetch(PDO::FETCH_ASSOC);
 
 ?>

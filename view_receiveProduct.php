@@ -67,7 +67,7 @@
     elseif(isset($_SESSION['ID'])){
         $UsertypeID = $_SESSION['ID'];
         $table = 'administrator';
-        $column = 'ID';
+        $column = 'id';
         $type = '';
     }
     $getTechnicianList = $conn->query("SELECT * FROM technician ");
